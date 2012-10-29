@@ -28,10 +28,10 @@ class ApplicationController < ActionController::Base
       else
 
         current_uri = request.env['PATH_INFO']
-        routes = ["", "/", "/users/login"]
+        routes = ["", "/", "/snorby/users/login"]
 
         if current_uri && routes.include?(current_uri)
-          redirect_to '/users/login' unless current_uri == "/users/login"
+          redirect_to '/snorby/users/login' unless current_uri == "/snorby/users/login"
         else
           authenticate_user!
         end
